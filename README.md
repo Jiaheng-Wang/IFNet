@@ -3,7 +3,7 @@
 
 This is the PyTorch implementation of the IFNet architecture for MI-EEG classification. 
 
-# IFNet: Architecture
+## IFNet: Architecture
 
 ![The IFNet architecture](/IFNet.png)
 
