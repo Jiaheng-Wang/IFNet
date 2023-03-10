@@ -3,7 +3,7 @@
 
 This is the PyTorch implementation of the IFNet architecture for MI-EEG classification. 
 
-## IFNet: Architecture
+# IFNet: Architecture
 
 ![The IFNet architecture](/IFNet.png)
 
@@ -34,13 +34,13 @@ Specifically, for each .mat file, it contains two items *EEG_data* and *labels* 
 ## IFNet: Results
 
 The classification results for IFNet and other competing architectures are as follows: 
-<div align=center><img src="/results.png" alt="The IFNet results" style="zoom:70%;"/></div>
+<div align=center><img src="/results.png" alt="The IFNet results" style="zoom:80%;"/></div>
 
-We also introduce IFNet V2 which yields the highest **79.89%** classification accuracy on BCIC-IV-2A. This is currently under research  in online settings.
+We also introduce IFNet V2 which yields the highest **79.78%** classification accuracy on BCIC-IV-2A. This is currently under research  in online settings.
 
 ## Cite:
 
-*IEEE Transactions on Neural Systems and Rehabilitation Engineering*.  (Under Review)
+*IEEE Transactions on Neural Systems and Rehabilitation Engineering*.  (Accept)
 
 
 ## Acknowledgment
