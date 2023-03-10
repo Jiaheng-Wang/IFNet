@@ -2,6 +2,7 @@ import torch
 import random
 
 
+
 class RandomCrop:
     def __init__(self, points = 750):
         self.points = points

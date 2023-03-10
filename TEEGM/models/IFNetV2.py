@@ -11,6 +11,7 @@ import torch.nn.functional as F
 from timm.models.layers import trunc_normal_
 
 
+
 class Conv(nn.Module):
     def __init__(self, conv, activation=None, bn=None):
         nn.Module.__init__(self)
@@ -35,8 +36,8 @@ class LogPowerLayer(nn.Module):
         self.dim = dim
 
     def forward(self, x):
-        return torch.log(torch.clamp(torch.mean(x ** 2, dim=self.dim), 1e-4, 1e6))
-        #return torch.log(torch.clamp(x.var(dim=self.dim, keepdim=False), 1e-6, 1e6))
+        return torch.log(torch.clamp(torch.mean(x ** 2, dim=self.dim), 1e-4, 1e4))
+        #return torch.log(torch.clamp(x.var(dim=self.dim, keepdim=False), 1e-4, 1e4))
 
 
 class InterFre(nn.Module):

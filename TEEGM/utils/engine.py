@@ -4,7 +4,8 @@ from timm.utils import AverageMeter
 import matplotlib.pyplot as plt
 import time
 import copy
-from TEEGM.utils.tools import get_grad_norm
+from .tools import get_grad_norm
+
 
 
 class TrainPainter():
@@ -116,12 +117,11 @@ def train_one_epoch(model, train_loader, criterion, optimizer, scheduler, epoch,
     optimizer.zero_grad()
 
     for idx, (data, label) in enumerate(train_loader):
+        data = data.cuda(non_blocking=True)
+        label = label.cuda(non_blocking=True)
         if rta:
             data, label = rta(data, label)
         N, C, T = data.shape
-
-        data = data.cuda(non_blocking=True)
-        label = label.cuda(non_blocking=True)
 
         out = model(data)
         loss = criterion(out, label)

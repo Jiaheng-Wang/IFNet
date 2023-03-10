@@ -11,6 +11,7 @@ import torch.nn.functional as F
 from timm.models.layers import trunc_normal_
 
 
+
 class Conv(nn.Module):
     def __init__(self, conv, activation=None, bn=None):
         nn.Module.__init__(self)

@@ -3,6 +3,8 @@ import math
 import torch
 import numpy as np
 
+
+
 class CutMix:
     def __init__(self, probability=0.5, min_area=0.02, max_area=1/3, device='cuda'):
         self.probability = probability
@@ -19,10 +21,10 @@ class CutMix:
 
     def __call__(self, input, labels):
         batch_size, chan, width = input.size()
-        labels = labels.cpu().numpy()
-        types = np.unique(labels)
+        labels = labels.cpu()
+        types = torch.unique(labels).tolist()
         for c in types:
-            idxes = np.where(labels == c)[0].tolist()
+            idxes = torch.where(labels == c)[0].tolist()
             for i in range(len(idxes)-1):
                 self._cutmix(input[idxes[i]], input[idxes[i+1]], width)
         return input

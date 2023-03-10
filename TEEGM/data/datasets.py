@@ -7,6 +7,7 @@ import random
 import time
 
 
+
 class EEG_Dataset(Dataset):
     def __init__(self, data, labels, transform=None):
         Dataset.__init__(self)
@@ -76,6 +77,7 @@ def preprocess(data_file, config, stage='test'):
     print(f'preprocessing data: {EEG.shape} {labels.shape}')
     #print(np.max(EEG))
     return EEG, labels
+
 
 def merge_data_files(config, data_files): # for all given files
     subject_data, subject_labels = [], []
