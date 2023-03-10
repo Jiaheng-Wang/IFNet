@@ -26,6 +26,7 @@ from yacs.config import CfgNode
 from config import get_config
 
 
+
 def build_lr_scheduler(optimizer, config, n_iter_per_epoch):
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, n_iter_per_epoch * config.TRAIN.EPOCHS,
                                                            eta_min=config.TRAIN.BASE_LR * (10 ** -2))
@@ -196,6 +197,7 @@ def main(config: CfgNode):
         test_acc_avg = np.mean([acc[1] for acc in acc_subjects])
         writer.writerow(['Avg', f'{test_acc_avg:.4f}', f'{val_acc_avg:.4f}'])
 
+    print(f'TAG: {config.TAG}')
     print(f"Subjects' val set average acc: {val_acc_avg:.4f}")
     print(f"Subjects' test set average acc: {test_acc_avg:.4f}")
 

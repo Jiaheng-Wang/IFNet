@@ -7,6 +7,8 @@ import os
 import random
 from yacs.config import CfgNode as CN
 
+
+
 _C = CN()
 
 # -----------------------------------------------------------------------------
@@ -31,7 +33,7 @@ _C.DATA.FS = 250
 _C.DATA.RESAMPLE = 1
 _C.DATA.REF_DUR = 0 #time duration of baseline reference before the cue start
 _C.DATA.MEAN = 0
-_C.DATA.STD = 25
+_C.DATA.STD = 5.
 _C.DATA.TIME_WIN = [0.5, 3.5]
 _C.DATA.DUR = 3
 _C.DATA.WIN_STEP = 4
@@ -60,7 +62,7 @@ _C.SAVE = False
 _C.EVAL = False
 _C.EVAL_TAG = ''
 _C.OUTPUT = 'output'
-_C.TAG = 'BCIC_IFNet'    #file name to log the experiment process and results
+_C.TAG = 'BCIC_IFNetV2'    #file name to log the experiment process and results
 
 # -----------------------------------------------------------------------------
 # Training settings
